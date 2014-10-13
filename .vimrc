@@ -19,7 +19,9 @@ syntax on
 set number
 
 " taglistの設定
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let tlist_php_settings='php;f:function'
+let Tlist_Show_One_File = 1  			" 開いているファイルのtagのみ表示する
+let Tlist_Use_Right_Window = 1			" 右側にtaglistを表示する
+let Tlist_Exit_OnlyWindow = 1			" 開いているファイルがtaglistのみになったら終了する
+let tlist_php_settings='php;f:function'		" functionのみ表示する
+set tags+=~/.tags				" 読み込むtagsファイルの場所
+
