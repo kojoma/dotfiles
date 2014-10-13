@@ -18,3 +18,8 @@ syntax on
 " 行番号を表示
 set number
 
+" taglistの設定
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+let tlist_php_settings='php;f:function'
