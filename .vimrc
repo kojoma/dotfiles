@@ -19,9 +19,53 @@ syntax on
 set number
 
 " taglistの設定
-let Tlist_Show_One_File = 1  			" 開いているファイルのtagのみ表示する
-let Tlist_Use_Right_Window = 1			" 右側にtaglistを表示する
-let Tlist_Exit_OnlyWindow = 1			" 開いているファイルがtaglistのみになったら終了する
-let tlist_php_settings='php;f:function'		" functionのみ表示する
-set tags+=~/.tags				" 読み込むtagsファイルの場所
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+let tlist_php_settings='php;f:function'
+set tags+=~/.tags
+
+" tabキーの設定
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4
+
+" タイトルをウィンドウ枠に表示
+set title
+
+" ルーラーを表示(ステータスバーにカーソル位置を表示)
+set ruler
+
+" 入力中のコマンドをステータスに表示する
+set showcmd
+
+" バックアップファイルを作成しない
+set nobackup
+
+" スワップファイルを作成しない
+set noswapfile
+
+" ビープ音を鳴らさない
+set vb t_vb=
+
+" ClipBoardの利用
+set clipboard&
+set clipboard+=unnamed
+set clipboard+=autoselect
+set clipboard=unnamed
+
+" 最後までサーチすると先頭に戻る
+set wrapscan
+
+" 大文字小文字の区別をしない
+set ignorecase
+
+" 検索文字列に大文字があった場合に反映
+set incsearch
+
+"行番号の表示/非表示をマッピング
+"(クリップボードが使えないときのコピー用)
+nnoremap <silent> non :<C-u>set nonumber<CR>
+nnoremap <silent> setn :<C-u>set number<CR>
 
