@@ -11,7 +11,7 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
 
-" カラーテーマを設定
+"カラーテーマを設定
 colorscheme molokai
 syntax on
 
@@ -23,6 +23,7 @@ let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
 let tlist_php_settings='php;f:function'
+let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 set tags+=~/.tags
 
 " tabキーの設定
@@ -64,8 +65,11 @@ set ignorecase
 " 検索文字列に大文字があった場合に反映
 set incsearch
 
-"行番号の表示/非表示をマッピング
-"(クリップボードが使えないときのコピー用)
+" 行番号の表示/非表示をマッピング
+" (クリップボードが使えないときのコピー用)
 nnoremap <silent> non :<C-u>set nonumber<CR>
 nnoremap <silent> setn :<C-u>set number<CR>
 
+" マウスを有効に
+set mouse=a
+set ttymouse=xterm2
