@@ -68,6 +68,9 @@ set ignorecase
 " 検索文字列に大文字があった場合に反映
 set incsearch
 
+" 検索文字をハイライト
+set hlsearch
+
 " 行番号の表示/非表示をマッピング
 " (クリップボードが使えないときのコピー用)
 nnoremap <silent> non :<C-u>set nonumber<CR>
