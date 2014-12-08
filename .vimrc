@@ -32,6 +32,9 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
+" 自動インデントOFF
+set noautoindent
+
 " タイトルをウィンドウ枠に表示
 set title
 
