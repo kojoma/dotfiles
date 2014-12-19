@@ -28,12 +28,17 @@ set tags+=~/.tags
 
 " tabキーの設定
 set tabstop=4
-set autoindent
+"set autoindent
 set expandtab
 set shiftwidth=4
 
 " 自動インデントOFF
 set noautoindent
+
+" 改行で自動コメントアウトを無効にする
+setlocal formatoptions-=r
+setlocal formatoptions-=o
+autocmd FileType * setlocal formatoptions-=ro
 
 " タイトルをウィンドウ枠に表示
 set title
@@ -68,9 +73,6 @@ set ignorecase
 " 検索文字列に大文字があった場合に反映
 set incsearch
 
-" 検索文字をハイライト
-set hlsearch
-
 " 行番号の表示/非表示をマッピング
 " (クリップボードが使えないときのコピー用)
 nnoremap <silent> non :<C-u>set nonumber<CR>
@@ -79,6 +81,9 @@ nnoremap <silent> setn :<C-u>set number<CR>
 " マウスを有効に
 set mouse=a
 set ttymouse=xterm2
+
+" 検索文字をハイライト
+set hlsearch
 
 " 最後のカーソル位置を記憶する
 if has("autocmd")
@@ -92,3 +97,122 @@ if has("autocmd")
     \ endif
   augroup END
 endif
+
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+ 
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+ 
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+ 
+" ファイルをtree表示してくれる
+NeoBundle 'scrooloose/nerdtree'
+
+" Gitを便利に使う
+NeoBundle 'tpope/vim-fugitive'
+ 
+" Rails向けのコマンドを提供する
+NeoBundle 'tpope/vim-rails'
+
+" Ruby向けにendを自動挿入してくれる
+NeoBundle 'tpope/vim-endwise'
+
+" コメントON/OFFを手軽に実行
+NeoBundle 'tomtom/tcomment_vim'
+
+" インデントに色を付けて見やすくする
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" ログファイルを色づけしてくれる
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+
+" 行末の半角スペースを可視化
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+call neobundle#end()
+ 
+" Required:
+filetype plugin indent on
+ 
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+NeoBundleCheck
+
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
+
+" grep検索の実行後にQuickFix Listを表示する
+autocmd QuickFixCmdPost *grep* cwindow
+
+" ステータス行に現在のgitブランチを表示する
+set statusline+=%{fugitive#statusline()}
+
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" 挿入モード時、ステータスラインの色を変更
+""""""""""""""""""""""""""""""
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" 自動的に閉じ括弧を入力
+""""""""""""""""""""""""""""""
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
+""""""""""""""""""""""""""""""
+
+" ファイルを指定せずにvimを起動したらNERDTreeを起動する
+autocmd vimenter * if !argc() | NERDTree | endif
