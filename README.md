@@ -1,12 +1,12 @@
 ## 個人的な開発環境の設定をまとめたリポジトリ  
   
 ###シェルについて
-以下はzshを使ってる前提
-ec2とかのデフォルトはbashなので変更すること
-oh-my-zshも入れる
+以下はzshを使ってる前提  
+ec2とかのデフォルトはbashなので変更すること  
+oh-my-zshも入れる  
   yum install zsh  
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-  chsh
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh  
+  chsh  
   
 ###vimとzshの設定
 自分のホームディレクトリでこのリポジトリをclone  
