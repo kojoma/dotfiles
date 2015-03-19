@@ -219,3 +219,6 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " 行末の無駄なスペースを削除する
 autocmd BufWritePre * :%s/\s\+$//ge
+
+" 行末の無駄な改行文字を削除する
+autocmd BufWritePre * :%s/^M//ge
