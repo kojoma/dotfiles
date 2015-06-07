@@ -103,19 +103,19 @@ endif
 "---------------------------
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
- 
+
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
- 
+
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
- 
+
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
 
@@ -139,10 +139,10 @@ set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 
 call neobundle#end()
- 
+
 " Required:
 filetype plugin indent on
- 
+
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 NeoBundleCheck
 
@@ -226,3 +226,6 @@ autocmd BufWritePre * :%s/\s\+$//ge
 
 " 行末の無駄な改行文字を削除する
 autocmd BufWritePre * :%s/^M//ge
+
+" カーソル行をハイライト
+set cursorline
