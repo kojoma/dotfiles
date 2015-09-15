@@ -225,7 +225,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " 行末の無駄な改行文字を削除する
-autocmd BufWritePre * :%s/^M//ge
+autocmd BufWritePre * :%s///ge
 
 " カーソル行をハイライト
 set cursorline
