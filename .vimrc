@@ -134,6 +134,37 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 
+" 存在しないディレクトリを自動作成
+NeoBundle 'mopp/autodirmake.vim'
+
+" 自動補完
+" if_luaが有効ならneocompleteを使う
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+
+if neobundle#is_installed('neocomplete')
+    " neocomplete用設定
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
+elseif neobundle#is_installed('neocomplcache')
+    " neocomplcache用設定
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_ignore_case = 1
+    let g:neocomplcache_enable_smart_case = 1
+    if !exists('g:neocomplcache_keyword_patterns')
+        let g:neocomplcache_keyword_patterns = {}
+    endif
+    let g:neocomplcache_keyword_patterns._ = '\h\w*'
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+endif
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
@@ -154,7 +185,10 @@ NeoBundleCheck
 autocmd QuickFixCmdPost *grep* cwindow
 
 " ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
+set statusline=%F%m%r%h%w%=\ %{fugitive#statusline()}
+
+" ステータスバーを常に表示
+set laststatus=2
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
@@ -225,7 +259,33 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " 行末の無駄な改行文字を削除する
-autocmd BufWritePre * :%s///ge
+autocmd BufWritePre * :%s///ge
 
 " カーソル行をハイライト
 set cursorline
+
+" 貼付け時に自動で:set paste
+if &term =~ "xterm"
+    let &t_ti .= "\e[?2004h"
+    let &t_te .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+    cnoremap <special> <Esc>[200~ <nop>
+    cnoremap <special> <Esc>[201~ <nop>
+endif
+
+" 文字コード自動判別
+set fileencodings=euc-jp,utf-8,iso-2022-jp,cp932,sjis,latin1
+
+" .tもperlファイルとして認識する
+autocmd BufNewFile,BufRead *.t set filetype=perl
+
+" ヤンク可能な行数を設定
+set viminfo='20,\"1000
