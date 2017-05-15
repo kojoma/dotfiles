@@ -162,9 +162,6 @@ endfunction
 "imap ( ()<LEFT>
 """"""""""""""""""""""""""""""
 
-" ファイルを指定せずにvimを起動したらNERDTreeを起動する
-autocmd vimenter * if !argc() | NERDTree | endif
-
 " 行末の無駄なスペースを削除する
 autocmd BufWritePre * :%s/\s\+$//ge
 
