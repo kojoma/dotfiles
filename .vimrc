@@ -18,14 +18,6 @@ syntax on
 " 行番号を表示
 set number
 
-" taglistの設定
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let tlist_php_settings='php;f:function'
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
-set tags+=~/.tags
-
 " tabキーの設定
 set tabstop=4
 "set autoindent
