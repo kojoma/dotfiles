@@ -98,88 +98,9 @@ if has("autocmd")
   augroup END
 endif
 
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-
-" Gitを便利に使う
-NeoBundle 'tpope/vim-fugitive'
-
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
-
-" インデントに色を付けて見やすくする
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-
-" 行末の半角スペースを可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
-
-" 存在しないディレクトリを自動作成
-NeoBundle 'mopp/autodirmake.vim'
-
-" 自動補完
-" if_luaが有効ならneocompleteを使う
-NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
-
-if neobundle#is_installed('neocomplete')
-    " neocomplete用設定
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_ignore_case = 1
-    let g:neocomplete#enable_smart_case = 1
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns._ = '\h\w*'
-elseif neobundle#is_installed('neocomplcache')
-    " neocomplcache用設定
-    let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_ignore_case = 1
-    let g:neocomplcache_enable_smart_case = 1
-    if !exists('g:neocomplcache_keyword_patterns')
-        let g:neocomplcache_keyword_patterns = {}
-    endif
-    let g:neocomplcache_keyword_patterns._ = '\h\w*'
-    let g:neocomplcache_enable_camel_case_completion = 1
-    let g:neocomplcache_enable_underbar_completion = 1
-endif
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-NeoBundleCheck
-
-"-------------------------
-" End Neobundle Settings.
-"-------------------------
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
