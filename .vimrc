@@ -199,11 +199,5 @@ if &term =~ "xterm"
     cnoremap <special> <Esc>[201~ <nop>
 endif
 
-" 文字コード自動判別
-set fileencodings=euc-jp,utf-8,iso-2022-jp,cp932,sjis,latin1
-
-" .tもperlファイルとして認識する
-autocmd BufNewFile,BufRead *.t set filetype=perl
-
 " ヤンク可能な行数を設定
 set viminfo='20,\"1000
