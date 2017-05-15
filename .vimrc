@@ -105,9 +105,6 @@ set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
-" ステータス行に現在のgitブランチを表示する
-set statusline=%F%m%r%h%w%=\ %{fugitive#statusline()}
-
 " ステータスバーを常に表示
 set laststatus=2
 
