@@ -83,3 +83,6 @@ echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# cd したら ls -GAF する
+function chpwd() { ls -GAF }
