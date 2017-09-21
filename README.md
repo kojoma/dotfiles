@@ -1,24 +1,38 @@
-## 個人的な開発環境の設定をまとめたリポジトリ  
-  
-###シェルについて
-以下はzshを使ってる前提  
-ec2とかのデフォルトはbashなので変更すること  
-oh-my-zshも入れる  
-  yum install zsh  
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh  
-  chsh  
-  
-###vimとzshの設定
-自分のホームディレクトリでこのリポジトリをclone  
-設定ファイルへのシンボリックリンクを作成  
-  ln -s ~/mysettings/.vimrc ~/.vimrc  
-  ln -s ~/mysettings/.zshrc ~/.zshrc  
-  ln -s ~/mysettings/colors ~/.vim/colors  
-あとは更新されたらリポジトリをpull  
-  
-###Vundle/NeoBundleのインストール  
-便利なプラグインを使うにはVundle/NeoBundleをインストール  
-  mkdir -p ~/.vim/bundle  
-  git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim  
-  git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc  
+# 個人的な開発環境の設定をまとめたリポジトリ
+
+## シェルについて
+
+シェルはzshを使うため、bashのサーバの場合は変更する必要がある。またoh my zshを使うためこれもインストールが必要。
+
+```
+# 現在のshellを確認
+echo $SHELL
+# 使用できるshellを確認
+cat /etc/shells
+# zsh, oh my zshのインストール
+yum install -y zsh
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+chsh
+```
+
+## vimとzshの設定
+
+```
+cd <path to work directory>
+git clone <this repository>
+# 各設定ファイルへのシンボリックリンクを作成
+ln -snf <path to this repository>/.vimrc ~/.vimrc
+ln -snf <path to this repository>/.zshrc ~/.zshrc
+ln -snf <path to this repository>/colors ~/.vim/colors
+```
+
+## vimプラグイン管理ツールについて
+
+~/.vim/autoloadにファイルを置く。
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+その後、何かのファイルをvimで開いて `:PlugInstall` コマンドを実行。
 
