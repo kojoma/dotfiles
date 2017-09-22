@@ -18,14 +18,6 @@ syntax on
 " 行番号を表示
 set number
 
-" taglistの設定
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let tlist_php_settings='php;f:function'
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
-set tags+=~/.tags
-
 " tabキーの設定
 set tabstop=4
 "set autoindent
@@ -98,63 +90,15 @@ if has("autocmd")
   augroup END
 endif
 
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-
-" Gitを便利に使う
-NeoBundle 'tpope/vim-fugitive'
-
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
-
-" インデントに色を付けて見やすくする
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-
-" 行末の半角スペースを可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
-
 "タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-NeoBundleCheck
-
-"-------------------------
-" End Neobundle Settings.
-"-------------------------
-
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
-" ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
+" ステータスバーを常に表示
+set laststatus=2
 
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
@@ -210,22 +154,89 @@ function! s:GetHighlight(hi)
 endfunction
 """"""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""
-" 自動的に閉じ括弧を入力
-""""""""""""""""""""""""""""""
-"imap { {}<LEFT>
-"imap [ []<LEFT>
-"imap ( ()<LEFT>
-""""""""""""""""""""""""""""""
-
-" ファイルを指定せずにvimを起動したらNERDTreeを起動する
-autocmd vimenter * if !argc() | NERDTree | endif
-
 " 行末の無駄なスペースを削除する
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " 行末の無駄な改行文字を削除する
-autocmd BufWritePre * :%s///ge
+autocmd BufWritePre * :%s///ge
 
 " カーソル行をハイライト
 set cursorline
+
+" 貼付け時に自動で:set paste
+if &term =~ "xterm"
+    let &t_ti .= "\e[?2004h"
+    let &t_te .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+    cnoremap <special> <Esc>[200~ <nop>
+    cnoremap <special> <Esc>[201~ <nop>
+endif
+
+" ヤンク可能な行数を設定
+set viminfo='20,\"1000
+
+" vim-plug setting
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" elixir
+Plug 'elixir-lang/vim-elixir'
+
+" 自動補完
+Plug 'Shougo/neocomplete.vim'
+
+" vim から git を便利に
+Plug 'https://github.com/tpope/vim-fugitive.git'
+
+" Initialize plugin system
+call plug#end()
+
+" neocomplete setting
+inoremap <expr><C-i>     neocomplete#complete_common_string()
+
+" 保存時にディレクトリがない場合は作成する
+augroup vimrc-auto-mkdir  " {{{
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)  " {{{
+    if !isdirectory(a:dir) && (a:force ||
+    \    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction  " }}}
+augroup END  " }}}
