@@ -216,6 +216,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
+Plug 'mhinz/vim-mix-format'
 
 " 自動補完
 Plug 'Shougo/neocomplete.vim'
