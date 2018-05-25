@@ -241,3 +241,6 @@ augroup vimrc-auto-mkdir  " {{{
     endif
   endfunction  " }}}
 augroup END  " }}}
+
+" 保存時に自動でmix formatする
+let g:mix_format_on_save = 1
