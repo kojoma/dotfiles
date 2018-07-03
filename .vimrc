@@ -18,14 +18,23 @@ syntax on
 " 行番号を表示
 set number
 
-" tabキーの設定
+" set FileType Indent
 set tabstop=4
-"set autoindent
-set expandtab
 set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
+set smartindent
 
-" 自動インデントOFF
-set noautoindent
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.erb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
 
 " 改行で自動コメントアウトを無効にする
 setlocal formatoptions-=r
