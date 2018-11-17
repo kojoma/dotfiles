@@ -4,12 +4,5 @@
 
 - name: Install Homebrew packages
   homebrew:
-    name: "{{ item }}"
+    name: ['git-flow-avh', 'jq', 'mas', 'tig', 'tree', 'wget']
     state: present
-  with_items:
-    - git-flow-avh
-    - jq
-    - mas
-    - tig
-    - tree
-    - wget
