@@ -8,3 +8,6 @@
     - mas
     - setup-git
     - setup-ssh
+  vars:
+    # mas role
+    - install_mas: "no"
