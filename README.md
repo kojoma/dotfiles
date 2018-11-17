@@ -56,3 +56,4 @@ $ chzh
   - `zstyle ':prezto:module:history-substring-search' case-sensitive 'yes'`
   - 詳細は公式のREADMEを参照
 - key-bindingsを `vi` に変更
+- [Customizing Your Prezto Prompt - Mike Buss](https://mikebuss.com/2014/04/07/customizing-prezto/)を参考にthemeを好きなものに変更する
