@@ -1,0 +1,6 @@
+---
+- name: Create symbolic link to .gitconfig
+  file:
+    src: ~/Documents/Dotfiles/gitconfig
+    dest: ~/.gitconfig
+    state: link

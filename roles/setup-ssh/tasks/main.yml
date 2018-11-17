@@ -1,0 +1,18 @@
+---
+- name: Create ssh directory
+  file:
+    path: ~/.ssh
+    mode: 0700
+    state: directory
+
+- name: Create symbolic link to id_rsa
+  file:
+    src: ~/Documents/Dotfiles/ssh/id_rsa
+    dest: ~/.ssh/id_rsa
+    state: link
+
+- name: Create symbolic link to id_rsa.pub
+  file:
+    src: ~/Documents/Dotfiles/ssh/id_rsa.pub
+    dest: ~/.ssh/id_rsa.pub
+    state: link

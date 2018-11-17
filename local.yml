@@ -6,3 +6,5 @@
     - homebrew
     - homebrew-cask
     - mas
+    - setup-git
+    - setup-ssh
