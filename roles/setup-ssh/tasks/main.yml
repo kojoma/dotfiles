@@ -1,4 +1,6 @@
 ---
+
+# id_rsa file is synced with iCloud
 - name: Create ssh directory
   file:
     path: ~/.ssh
