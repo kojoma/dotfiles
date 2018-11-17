@@ -1,0 +1,18 @@
+---
+
+- name: Install Mas
+  homebrew:
+    name: mas
+    state: present
+  when: install_mas == "yes"
+
+- name: Install App Store Packages by Mas
+  shell: "mas install {{ item.id }}"
+  with_items:
+    - { id: 1333542190, name: 1Password }
+    - { id: 1013897218, name: AppCleaner }
+    - { id: 568494494, name: Pocket}
+    - { id: 803453959, name: Slack }
+    - { id: 585829637, name: Todoist}
+    - { id: 497799835, name: Xcode}
+  when: install_mas == "yes"

@@ -1,0 +1,8 @@
+---
+- name: Update Homebrew
+  homebrew: update_homebrew=yes
+
+- name: Install Homebrew packages
+  homebrew:
+    name: ['git-flow-avh', 'jq', 'mas', 'tig', 'tree', 'vim', 'wget']
+    state: present

@@ -1,0 +1,15 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  roles:
+    - homebrew
+    - homebrew-cask
+    - mas
+    - setup-git
+    - setup-ssh
+    - setup-vim
+    - setup-zsh
+  vars:
+    # mas role
+    - install_mas: "no"
