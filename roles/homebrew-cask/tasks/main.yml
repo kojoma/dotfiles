@@ -6,7 +6,7 @@
 
 - name: Install Homebrew Cask packages
   homebrew_cask:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
   with_items:
     - alfred

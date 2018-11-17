@@ -6,7 +6,7 @@
     state: present
 
 - name: Install App Store Packages by Mas
-  shell: mas install {{ item.id }}
+  shell: "mas install {{ item.id }}"
   with_items:
     - { id: 1333542190, name: 1Password }
     - { id: 568494494, name: Pocket}
