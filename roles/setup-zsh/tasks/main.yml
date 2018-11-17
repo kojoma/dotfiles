@@ -4,9 +4,10 @@
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
     dest: ~/.zprezto
+    update: no
 
 - name: Add symbolic link dotfiles
-  file: 
+  file:
     src: ~/.zprezto/runcoms/{{ item }}
     dest: ~/.{{ item }}
     state: link
