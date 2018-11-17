@@ -1,10 +1,5 @@
 ---
 
-- name: Install zsh
-  homebrew:
-    name: zsh
-    state: present
-
 - name: Install prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
