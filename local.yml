@@ -8,6 +8,7 @@
     - mas
     - setup-git
     - setup-ssh
+    - setup-vim
     - setup-zsh
   vars:
     # mas role
