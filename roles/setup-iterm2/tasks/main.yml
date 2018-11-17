@@ -1,5 +1,22 @@
 ---
 
+- name: Tap for ricty
+  homebrew_tap:
+    tap: sanemat/font
+    state: present
+
+- name: Install ricty
+  homebrew:
+    name: ricty
+    state: latest
+    install_options: with-powerline,vim-powerline
+
+- name: Copy fonts
+  copy:
+    src: /usr/local/opt/ricty/share/fonts/Ricty*.ttf
+    dest: ~/Library/Fonts/
+  notify: run fc-cache
+
 - name: Create symbolic link to iTerm2 setting file
   file:
     src: ~/Documents/Application\ Datas/iTerm2/com.googlecode.iterm2.plist
