@@ -10,6 +10,7 @@
     - setup-ssh
     - setup-vim
     - setup-zsh
+    - setup-iterm2
   vars:
     # mas role
     - install_mas: "no"

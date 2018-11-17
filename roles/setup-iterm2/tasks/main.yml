@@ -1,0 +1,8 @@
+---
+
+- name: Create symbolic link to iTerm2 setting file
+  file:
+    src: ~/Documents/Application\ Datas/iTerm2/com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+    state: link
+    force: yes
