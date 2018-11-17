@@ -13,8 +13,10 @@
 
 - name: Copy fonts
   copy:
-    src: /usr/local/opt/ricty/share/fonts/Ricty*.ttf
+    src: "{{ item }}"
     dest: ~/Library/Fonts/
+  with_fileglob:
+    - "/usr/local/opt/ricty/share/fonts/Ricty*.ttf"
   notify: run fc-cache
 
 - name: Create symbolic link to iTerm2 setting file
