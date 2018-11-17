@@ -1,0 +1,24 @@
+---
+
+- name: Install zsh
+  homebrew:
+    name: zsh
+    state: present
+
+- name: Install prezto
+  git:
+    repo: https://github.com/sorin-ionescu/prezto.git
+    dest: ~/.zprezto
+
+- name: Add symbolic link dotfiles
+  file: 
+    src: ~/.zprezto/runcoms/{{ item }}
+    dest: ~/.{{ item }}
+    state: link
+  with_items:
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zprofile
+    - zshenv
+    - zshrc
