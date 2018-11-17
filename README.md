@@ -20,5 +20,5 @@ brew install ansible
 
 ```
 $ cd my-settings
-$ ansible-playbook local.yml
+$ ansible-playbook local.yml -i hosts
 ```
