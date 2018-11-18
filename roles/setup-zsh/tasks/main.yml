@@ -3,13 +3,13 @@
 - name: Install prezto
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
-    dest: ~/.zprezto
+    dest: "{{ home_dir }}/.zprezto"
     update: no
 
 - name: Add symbolic link dotfiles
   file:
-    src: ~/.zprezto/runcoms/{{ item }}
-    dest: ~/.{{ item }}
+    src: "{{ home_dir }}/.zprezto/runcoms/{{ item }}"
+    dest: "{{ home_dir }}/.{{ item }}"
     state: link
   with_items:
     - zlogin
