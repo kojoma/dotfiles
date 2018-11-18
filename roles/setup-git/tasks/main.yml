@@ -3,6 +3,6 @@
 # .gitconfig file is synced with iCloud
 - name: Create symbolic link to .gitconfig
   file:
-    src: ~/Documents/Dotfiles/gitconfig
-    dest: ~/.gitconfig
+    src: "{{ home_dir }}/Documents/Dotfiles/gitconfig"
+    dest: "{{ home_dir }}/.gitconfig"
     state: link

@@ -12,5 +12,7 @@
     - setup-vim
     - setup-zsh
   vars:
+    # execution user vars
+    - home_dir: "{{ lookup('env', 'HOME') }}"
     # mas role
     - install_mas: "no"
