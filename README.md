@@ -57,3 +57,7 @@ $ chzh
   - 詳細は公式のREADMEを参照
 - key-bindingsを `vi` に変更
 - [Customizing Your Prezto Prompt - Mike Buss](https://mikebuss.com/2014/04/07/customizing-prezto/)を参考にthemeを好きなものに変更する
+
+### Ruby Gems
+
+[Ansible gem module](https://docs.ansible.com/ansible/2.5/modules/gem_module.html)を利用して、インストールできそうだったがインストールしたはずのgemコマンドが利用できない問題があったためひとまず未対応。詳細は[このPull Request](https://github.com/kojoma/my-settings/pull/14)に記述している。
