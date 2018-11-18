@@ -4,5 +4,5 @@
 
 - name: Install Homebrew packages
   homebrew:
-    name: ['git-flow-avh', 'jq', 'mas', 'tig', 'tree', 'vim', 'wget']
+    name: ['carthage', 'git-flow-avh', 'jq', 'tig', 'tree', 'vim', 'wget']
     state: present

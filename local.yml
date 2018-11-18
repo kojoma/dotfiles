@@ -6,6 +6,7 @@
     - homebrew
     - homebrew-cask
     - mas
+    - gem
     - setup-git
     - setup-ssh
     - setup-vim
