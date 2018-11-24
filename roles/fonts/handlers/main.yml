@@ -1,0 +1,4 @@
+---
+
+- name: install_ricty
+  shell: fc-cache -vf

@@ -1,0 +1,13 @@
+---
+
+- name: Install dependency packages
+  homebrew:
+    name: ['fontconfig', 'gnu-tar']
+    state: present
+
+- name: Install ricty
+  unarchive:
+    src: http://www.rs.tus.ac.jp/yyusa/ricty_diminished/ricty_diminished-4.1.1.tar.gz
+    dest: "{{ home_dir }}/Library/Fonts/"
+    remote_src: yes
+  notify: install_ricty
