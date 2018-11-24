@@ -11,6 +11,7 @@
     - setup-vim
     - setup-zsh
     - fonts
+    - macos
   vars:
     # execution user vars
     - home_dir: "{{ lookup('env', 'HOME') }}"
