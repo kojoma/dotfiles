@@ -11,6 +11,7 @@
   with_items:
     - alfred
     - android-studio
+    - appcleaner
     - dash
     - docker
     - firefox
