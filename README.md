@@ -1,5 +1,7 @@
 # Provisioning Mac By Ansible
 
+[![CircleCI](https://circleci.com/gh/kojoma/my-settings.svg?style=svg)](https://circleci.com/gh/kojoma/my-settings)
+
 ## 手動での準備
 
 Ansibleを実行するための準備。必要であれば行う。
