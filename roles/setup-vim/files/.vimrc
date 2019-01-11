@@ -231,6 +231,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 
+" CoffeeScript
+Plug 'kchmck/vim-coffee-script'
+
 " 自動補完
 Plug 'Shougo/neocomplete.vim'
 
