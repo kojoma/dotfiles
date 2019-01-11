@@ -36,6 +36,7 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.erb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
