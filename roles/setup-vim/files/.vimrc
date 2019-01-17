@@ -234,6 +234,9 @@ Plug 'mhinz/vim-mix-format'
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script'
 
+" TypeScript
+Plug 'leafgarland/typescript-vim'
+
 " 自動補完
 Plug 'Shougo/neocomplete.vim'
 
