@@ -11,6 +11,7 @@
   with_items:
     - alfred
     - android-studio
+    - android-file-transfer
     - appcleaner
     - dash
     - docker
