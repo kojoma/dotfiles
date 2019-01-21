@@ -102,7 +102,7 @@ endif
 
 " Show tab, space, CRLF
 set list
-set listchars=tab:>.,trail:_,eol:$,extends:>,precedes:<,nbsp:%
+set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 
 " Show QuickFixList after grep
 autocmd QuickFixCmdPost *grep* cwindow
