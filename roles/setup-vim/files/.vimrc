@@ -11,11 +11,16 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
 
-"カラーテーマを設定
+" set encoding
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
+" Color theme
 colorscheme molokai
 syntax on
 
-" 行番号を表示
+" Show line number
 set number
 
 " set FileType Indent
@@ -41,57 +46,48 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-" 改行で自動コメントアウトを無効にする
+" Disabled auto comment out
 setlocal formatoptions-=r
 setlocal formatoptions-=o
 autocmd FileType * setlocal formatoptions-=ro
 
-" タイトルをウィンドウ枠に表示
+" Show file title
 set title
 
-" ルーラーを表示(ステータスバーにカーソル位置を表示)
+" Show ruler
 set ruler
 
-" 入力中のコマンドをステータスに表示する
+" Show inputting command
 set showcmd
 
-" バックアップファイルを作成しない
+" Not create backup file
 set nobackup
-
-" スワップファイルを作成しない
 set noswapfile
 
-" ビープ音を鳴らさない
+" No beep sound
 set vb t_vb=
 
-" ClipBoardの利用
+" Can use ClipBoard
 set clipboard&
 set clipboard+=unnamed
 set clipboard+=autoselect
 set clipboard=unnamed
 
-" 最後までサーチすると先頭に戻る
+" Loop search
 set wrapscan
 
-" 大文字小文字の区別をしない
+" Ignore charactor case
 set ignorecase
-
-" 検索文字列に大文字があった場合に反映
 set incsearch
 
-" 行番号の表示/非表示をマッピング
-" (クリップボードが使えないときのコピー用)
-nnoremap <silent> non :<C-u>set nonumber<CR>
-nnoremap <silent> setn :<C-u>set number<CR>
-
-" マウスを有効に
+" Enable mause
 set mouse=a
 set ttymouse=xterm2
 
-" 検索文字をハイライト
+" High light search keyword
 set hlsearch
 
-" 最後のカーソル位置を記憶する
+" Record cursor position
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
@@ -104,26 +100,24 @@ if has("autocmd")
   augroup END
 endif
 
-"タブ、空白、改行の可視化
+" Show tab, space, CRLF
 set list
-set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+set listchars=tab:>.,trail:_,eol:$,extends:>,precedes:<,nbsp:%
 
-" grep検索の実行後にQuickFix Listを表示する
+" Show QuickFixList after grep
 autocmd QuickFixCmdPost *grep* cwindow
 
-" ステータスバーを常に表示
+" Always show status bar
 set laststatus=2
 
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+" Auto enable indent guide
 let g:indent_guides_enable_on_vim_startup = 1
 
 """"""""""""""""""""""""""""""
-" 全角スペースの表示
-""""""""""""""""""""""""""""""
+" Show Zenkaku space
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
-
 if has('syntax')
     augroup ZenkakuSpace
         autocmd!
@@ -135,10 +129,8 @@ endif
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" 挿入モード時、ステータスラインの色を変更
-""""""""""""""""""""""""""""""
+" Change color of status bar
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
 if has('syntax')
   augroup InsertHook
     autocmd!
@@ -146,7 +138,6 @@ if has('syntax')
     autocmd InsertLeave * call s:StatusLine('Leave')
   augroup END
 endif
-
 let s:slhlcmd = ''
 function! s:StatusLine(mode)
   if a:mode == 'Enter'
@@ -157,7 +148,6 @@ function! s:StatusLine(mode)
     silent exec s:slhlcmd
   endif
 endfunction
-
 function! s:GetHighlight(hi)
   redir => hl
   exec 'highlight '.a:hi
@@ -168,16 +158,16 @@ function! s:GetHighlight(hi)
 endfunction
 """"""""""""""""""""""""""""""
 
-" 行末の無駄なスペースを削除する
+" Remove space of line end
 autocmd BufWritePre * :%s/\s\+$//ge
 
-" 行末の無駄な改行文字を削除する
+" Remove CRLF of line end
 autocmd BufWritePre * :%s///ge
 
-" カーソル行をハイライト
+" High light cursor line
 set cursorline
 
-" 貼付け時に自動で:set paste
+" Auto :set paste when pasted
 if &term =~ "xterm"
     let &t_ti .= "\e[?2004h"
     let &t_te .= "\e[?2004l"
@@ -194,7 +184,7 @@ if &term =~ "xterm"
     cnoremap <special> <Esc>[201~ <nop>
 endif
 
-" ヤンク可能な行数を設定
+" can 1000 line yanc
 set viminfo='20,\"1000
 
 " vim-plug setting
@@ -238,10 +228,10 @@ Plug 'kchmck/vim-coffee-script'
 " TypeScript
 Plug 'leafgarland/typescript-vim'
 
-" 自動補完
+" neocomplete
 Plug 'Shougo/neocomplete.vim'
 
-" vim から git を便利に
+" Git utility
 Plug 'https://github.com/tpope/vim-fugitive.git'
 
 " Initialize plugin system
@@ -250,7 +240,7 @@ call plug#end()
 " neocomplete setting
 inoremap <expr><C-i>     neocomplete#complete_common_string()
 
-" 保存時にディレクトリがない場合は作成する
+" Auto make directory if needed
 augroup vimrc-auto-mkdir  " {{{
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
@@ -262,5 +252,5 @@ augroup vimrc-auto-mkdir  " {{{
   endfunction  " }}}
 augroup END  " }}}
 
-" 保存時に自動でmix formatする
+" Auto mix format when saved
 let g:mix_format_on_save = 1
