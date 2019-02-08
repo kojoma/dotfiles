@@ -1,8 +1,14 @@
 ---
 
-# .gitconfig file is synced with iCloud
+# Dotfiles are synced in iCloud
 - name: Create symbolic link to .gitconfig
   file:
     src: "{{ home_dir }}/Documents/Dotfiles/gitconfig"
     dest: "{{ home_dir }}/.gitconfig"
+    state: link
+
+- name: Create symbolic link to .gitignore_global
+  file:
+    src: "{{ home_dir }}/Documents/Dotfiles/gitignore_global"
+    dest: "{{ home_dir }}/.gitignore"
     state: link
