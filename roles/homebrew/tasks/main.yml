@@ -2,7 +2,12 @@
 - name: Update Homebrew
   homebrew: update_homebrew=yes
 
+- name: Tap heroku repository
+  homebrew_tap:
+    name: heroku/brew
+    state: present
+
 - name: Install Homebrew packages
   homebrew:
-    name: ['carthage', 'git-flow-avh', 'hub', 'jq', 'stern', 'tig', 'tree', 'vim', 'wget']
+    name: ['carthage', 'git-flow-avh', 'heroku', 'hub', 'jq', 'stern', 'tig', 'tree', 'vim', 'wget']
     state: present
