@@ -1,0 +1,85 @@
+---
+
+- name: Check is ipm installed
+  shell: ipm --version
+  register: ipm_version
+  changed_when: false
+  failed_when: false
+
+- name: Find for plugin vibrant-dark-ui
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/vibrant-dark-ui"
+    file_type: directory
+  register: result_vibrant_dark_ui
+  when: ipm_version.rc == 0
+
+- name: Install vibrant-dark-ui if needed
+  shell: ipm install vibrant-dark-ui
+  when: result_vibrant_dark_ui.matched == 0
+
+- name: Find for plugin markdown-emoji
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/markdown-emoji"
+    file_type: directory
+  register: result_markdown_emoji
+  when: ipm_version.rc == 0
+
+- name: Install markdown-emoji if needed
+  shell: ipm install markdown-emoji
+  when: result_markdown_emoji.matched == 0
+
+- name: Find for plugin spell-checker
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/spell-checker"
+    file_type: directory
+  register: result_spell_checker
+  when: ipm_version.rc == 0
+
+- name: Install spell-checker if needed
+  shell: ipm install spell-checker
+  when: result_spell_checker.matched == 0
+
+- name: Find for plugin hide-menu-bar
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/hide-menu-bar"
+    file_type: directory
+  register: result_hide_menu_bar
+  when: ipm_version.rc == 0
+
+- name: Install hide-menu-bar if needed
+  shell: ipm install hide-menu-bar
+  when: result_hide_menu_bar.matched == 0
+
+- name: Find for plugin autoupdate-list-numbers
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/autoupdate-list-numbers"
+    file_type: directory
+  register: result_autoupdate_list_numbers
+  when: ipm_version.rc == 0
+
+- name: Install autoupdate-list-numbers if needed
+  shell: ipm install autoupdate-list-numbers
+  when: result_autoupdate_list_numbers.matched == 0
+
+- name: Find for plugin breaks
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/breaks"
+    file_type: directory
+  register: result_breaks
+  when: ipm_version.rc == 0
+
+- name: Install breaks if needed
+  shell: ipm install breaks
+  when: result_breaks.matched == 0
+
+- name: Find for plugin colorfi-for-japanese-preview
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/colorfi-for-japanese-preview"
+    file_type: directory
+  register: result_colorfi_for_japanese_preview
+  when: ipm_version.rc == 0
+
+- name: Install colorfi-for-japanese-preview if needed
+  shell: ipm install colorfi-for-japanese-preview
+  when: result_colorfi_for_japanese_preview.matched == 0
+
