@@ -10,6 +10,7 @@
     - setup-ssh
     - setup-vim
     - setup-zsh
+    - inkdrop-plugins
     - fonts
     - macos
   vars:
