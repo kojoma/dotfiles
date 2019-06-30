@@ -50,17 +50,6 @@
   shell: ipm install hide-menu-bar
   when: result_hide_menu_bar.matched == 0
 
-- name: Find for plugin autoupdate-list-numbers
-  find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/autoupdate-list-numbers"
-    file_type: directory
-  register: result_autoupdate_list_numbers
-  when: ipm_version.rc == 0
-
-- name: Install autoupdate-list-numbers if needed
-  shell: ipm install autoupdate-list-numbers
-  when: result_autoupdate_list_numbers.matched == 0
-
 - name: Find for plugin breaks
   find:
     paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/breaks"
