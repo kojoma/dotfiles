@@ -72,3 +72,14 @@
   shell: ipm install colorfi-for-japanese-preview
   when: result_colorfi_for_japanese_preview.matched == 0
 
+- name: Find for plugin material-dark-mod-syntax
+  find:
+    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/material-dark-mod-syntax"
+    file_type: directory
+  register: result_material_dark_mod_syntax
+  when: ipm_version.rc == 0
+
+- name: Install material-dark-mod-syntax if needed
+  shell: ipm install material-dark-mod-syntax
+  when: result_material_dark_mod_syntax.matched == 0
+
