@@ -4,6 +4,11 @@
     name: cask
     state: present
 
+- name: Tap DevHub repository
+  homebrew_tap:
+    name: devhubapp/devhub
+    state: present
+
 - name: Install Homebrew Cask packages
   homebrew_cask:
     name: "{{ item }}"
@@ -13,6 +18,7 @@
     - android-studio
     - android-file-transfer
     - appcleaner
+    - devhub
     - docker
     - firefox
     - google-chrome
