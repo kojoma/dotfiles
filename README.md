@@ -16,8 +16,7 @@ $ xcode-select --install
 
 $ git clone https://github.com/kojoma/my-settings.git
 
-# Install Homebrew
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# See https://brew.sh/ and install Homebrew
 
 # Install Ansible
 brew install ansible
