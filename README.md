@@ -8,8 +8,8 @@ Ansibleを実行するための準備。必要であれば行う。
 
 ```
 $ cd ~/
-$ mkdir -p Works/git
-$ cd Works/git
+$ mkdir Works
+$ cd Works
 
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
