@@ -8,16 +8,15 @@ Ansibleを実行するための準備。必要であれば行う。
 
 ```
 $ cd ~/
-$ mkdir -p Works/git
-$ cd Works/git
+$ mkdir Works
+$ cd Works
 
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
 
 $ git clone https://github.com/kojoma/my-settings.git
 
-# Install Homebrew
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# See https://brew.sh/ and install Homebrew
 
 # Install Ansible
 brew install ansible
@@ -39,7 +38,7 @@ $ ansible-playbook local.yml -i hosts --extra-vars "install_mas=yes"
 
 ```
 # /bin/zshに変更する
-$ chzh
+$ chsh
 ```
 
 ### preztoの設定
