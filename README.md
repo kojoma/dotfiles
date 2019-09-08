@@ -39,7 +39,7 @@ $ ansible-playbook local.yml -i hosts --extra-vars "install_mas=yes"
 
 ```
 # /bin/zshに変更する
-$ chzh
+$ chsh
 ```
 
 ### preztoの設定
