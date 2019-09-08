@@ -1,11 +1,16 @@
 ---
 
-# id_rsa file is synced with iCloud
+# id_rsa file is synced with iCloud drive
 - name: Create ssh directory
   file:
     path: "{{ home_dir }}/.ssh"
     mode: 0700
     state: directory
+
+- name: Set permission of the id_rsa file
+  file:
+    path: "{{ home_dir }}/Documents/Dotfiles/ssh/id_rsa"
+    mode: 0600
 
 - name: Create symbolic link to id_rsa
   file:
