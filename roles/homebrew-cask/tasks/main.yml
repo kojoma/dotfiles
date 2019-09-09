@@ -15,12 +15,9 @@
     state: present
   with_items:
     - alfred
-    - android-studio
-    - android-file-transfer
     - appcleaner
     - devhub
     - docker
-    - firefox
     - google-chrome
     - google-japanese-ime
     - inkdrop
