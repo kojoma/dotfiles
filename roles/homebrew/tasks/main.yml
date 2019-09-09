@@ -9,5 +9,5 @@
 
 - name: Install Homebrew packages
   homebrew:
-    name: ['carthage', 'ghq', 'git-flow-avh', 'heroku', 'hub', 'jq', 'stern', 'tig', 'tree', 'vim', 'wget']
+    name: ['awscli', 'carthage', 'ghq', 'git-flow-avh', 'heroku', 'hub', 'jq', 'stern', 'tig', 'tree', 'vim', 'wget']
     state: present
