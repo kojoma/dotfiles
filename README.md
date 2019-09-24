@@ -26,10 +26,10 @@ brew install ansible
 
 ```
 $ cd my-settings
-$ ansible-playbook local.yml -i hosts
+$ bin/setup.sh
 
-# Masでアプリケーションをインストールする場合、extra-varsで指定する
-$ ansible-playbook local.yml -i hosts --extra-vars "install_mas=yes"
+# Mas でアプリケーションもインストールする場合
+$ bin/setup-with-mas.sh
 ```
 
 ## 手動での設定が必要なこと
