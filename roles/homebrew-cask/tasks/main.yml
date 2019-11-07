@@ -9,11 +9,6 @@
     name: devhubapp/devhub
     state: present
 
-- name: Tap Fonts repository
-  homebrew_tap:
-    name: homebrew/cask-fonts
-    state: present
-
 - name: Install Homebrew Cask packages
   homebrew_cask:
     name: "{{ item }}"
@@ -23,7 +18,7 @@
     - appcleaner
     - devhub
     - docker
-    - font-ricty-diminished
+    - font-cica
     - google-chrome
     - google-japanese-ime
     - inkdrop
