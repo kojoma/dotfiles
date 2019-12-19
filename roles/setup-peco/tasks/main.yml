@@ -1,0 +1,13 @@
+---
+
+- name: Create .config directory
+  file:
+    path: "{{ home_dir }}/.config"
+    state: directory
+
+# Dotfiles are synced in iCloud
+- name: Create symbolic link to peco
+  file:
+    src: "{{ home_dir }}/Documents/Dotfiles/peco"
+    dest: "{{ home_dir }}/.config/peco"
+    state: link
