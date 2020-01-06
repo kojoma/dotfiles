@@ -39,6 +39,7 @@ $ bin/setup-with-mas.sh
 ```
 # /bin/zshに変更する
 $ chsh
+```
 
 ### .zshrc に config files を読み込む設定を追記
 
