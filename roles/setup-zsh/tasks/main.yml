@@ -18,3 +18,9 @@
     - zprofile
     - zshenv
     - zshrc
+
+- name: Add symbolic link to config directory on iCloud
+  file:
+    src: "{{ home_dir }}/Documents/Dotfiles/zshconfig"
+    dest: "{{ home_dir }}/.zshconfig"
+    state: link

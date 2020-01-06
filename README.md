@@ -39,6 +39,18 @@ $ bin/setup-with-mas.sh
 ```
 # /bin/zshに変更する
 $ chsh
+
+### .zshrc に config files を読み込む設定を追記
+
+```
+# Customize to your needs...
+ZSHHOME="${HOME}/.zshconfig"
+
+if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
+  for file in $ZSHHOME/*; do
+    [[ ${file##*/} = *.zsh ]] && [ \( -f $file -o -h $file \) -a -r $file ] && source $file
+  done
+fi
 ```
 
 ### preztoの設定
