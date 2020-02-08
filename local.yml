@@ -1,7 +1,8 @@
+---
 - hosts: localhost
   connection: local
-  gather_facts: no
-  become: no
+  gather_facts: false
+  become: false
   roles:
     - homebrew
     - homebrew-cask
@@ -16,5 +17,8 @@
   vars:
     # execution user vars
     - home_dir: "{{ lookup('env', 'HOME') }}"
+    # inkdrop-plugins role
+    # yamllint disable-line rule:line-length
+    - inkdrop_packages_dir: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages"
     # mas role
     - install_mas: "no"

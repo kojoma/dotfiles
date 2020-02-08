@@ -8,7 +8,7 @@
 
 - name: Find for plugin vibrant-dark-ui
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/vibrant-dark-ui"
+    paths: "{{ inkdrop_packages_dir }}/vibrant-dark-ui"
     file_type: directory
   register: result_vibrant_dark_ui
   when: ipm_version.rc == 0
@@ -19,7 +19,7 @@
 
 - name: Find for plugin markdown-emoji
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/markdown-emoji"
+    paths: "{{ inkdrop_packages_dir }}/markdown-emoji"
     file_type: directory
   register: result_markdown_emoji
   when: ipm_version.rc == 0
@@ -30,7 +30,7 @@
 
 - name: Find for plugin spell-checker
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/spell-checker"
+    paths: "{{ inkdrop_packages_dir }}/spell-checker"
     file_type: directory
   register: result_spell_checker
   when: ipm_version.rc == 0
@@ -41,7 +41,7 @@
 
 - name: Find for plugin hide-menu-bar
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/hide-menu-bar"
+    paths: "{{ inkdrop_packages_dir }}/hide-menu-bar"
     file_type: directory
   register: result_hide_menu_bar
   when: ipm_version.rc == 0
@@ -52,7 +52,7 @@
 
 - name: Find for plugin breaks
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/breaks"
+    paths: "{{ inkdrop_packages_dir }}/breaks"
     file_type: directory
   register: result_breaks
   when: ipm_version.rc == 0
@@ -63,7 +63,7 @@
 
 - name: Find for plugin colorfi-for-japanese-preview
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/colorfi-for-japanese-preview"
+    paths: "{{ inkdrop_packages_dir }}/colorfi-for-japanese-preview"
     file_type: directory
   register: result_colorfi_for_japanese_preview
   when: ipm_version.rc == 0
@@ -74,7 +74,7 @@
 
 - name: Find for plugin material-dark-mod-syntax
   find:
-    paths: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages/material-dark-mod-syntax"
+    paths: "{{ inkdrop_packages_dir }}/material-dark-mod-syntax"
     file_type: directory
   register: result_material_dark_mod_syntax
   when: ipm_version.rc == 0
@@ -82,4 +82,3 @@
 - name: Install material-dark-mod-syntax if needed
   shell: ipm install material-dark-mod-syntax
   when: result_material_dark_mod_syntax.matched == 0
-
