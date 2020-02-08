@@ -9,3 +9,4 @@ jobs:
       - checkout
       - run: pip install -r ./.circleci/requirements.txt
       - run: ansible-lint ./*.yml -c .circleci/.ansible-lint
+      - run: yamllint .
