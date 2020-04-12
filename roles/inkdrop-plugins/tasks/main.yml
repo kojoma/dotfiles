@@ -82,3 +82,14 @@
 - name: Install material-dark-mod-syntax if needed
   shell: ipm install material-dark-mod-syntax
   when: result_material_dark_mod_syntax.matched == 0
+
+- name: Find for plugin table-editor
+  find:
+    paths: "{{ inkdrop_packages_dir }}/table-editor"
+    file_type: directory
+  register: result_table_editor
+  when: ipm_version.rc == 0
+
+- name: Install table-editor if needed
+  shell: ipm install table-editor
+  when: result_table_editor.matched == 0
