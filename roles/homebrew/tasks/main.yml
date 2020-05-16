@@ -17,6 +17,7 @@
       - git-flow-avh
       - heroku
       - hub
+      - hugo
       - jq
       - peco
       - rbenv
