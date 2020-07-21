@@ -11,6 +11,7 @@
   homebrew:
     name:
       - awscli
+      - bluetoothconnector
       - carthage
       - firebase-cli
       - ghq
