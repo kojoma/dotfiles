@@ -93,3 +93,14 @@
 - name: Install table-editor if needed
   shell: ipm install table-editor
   when: result_table_editor.matched == 0
+
+- name: Find for plugin toc
+  find:
+    paths: "{{ inkdrop_packages_dir }}/toc"
+    file_type: directory
+  register: result_toc
+  when: ipm_version.rc == 0
+
+- name: Install toc if needed
+  shell: ipm install toc
+  when: result_toc.matched == 0
