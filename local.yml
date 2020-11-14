@@ -13,6 +13,7 @@
     - setup-peco
     - inkdrop-plugins
     - macos
+    - aaaa
   vars:
     # execution user vars
     - home_dir: "{{ lookup('env', 'HOME') }}"
