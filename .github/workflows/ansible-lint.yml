@@ -12,4 +12,6 @@ jobs:
       - name: ansible-lint
         uses: ansible/ansible-lint-action@master
         with:
-          targets: "./"
+          targets: |
+            local.yml
+            roles/**/*.yml
