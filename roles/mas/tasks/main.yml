@@ -11,7 +11,6 @@
   with_items:
     - {id: 1055511498, name: DayOne}
     - {id: 441258766, name: Magnet}
-    - {id: 803453959, name: Slack}
     - {id: 904280696, name: Things3}
     - {id: 497799835, name: Xcode}
   when: install_mas == "yes"
