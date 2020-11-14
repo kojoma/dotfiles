@@ -4,7 +4,8 @@
   git:
     repo: https://github.com/sorin-ionescu/prezto.git
     dest: "{{ home_dir }}/.zprezto"
-    update: false
+    update: no
+    version: '0a405494cae54e208ff550c1ba83380ed115410a'
 
 - name: Add symbolic link dotfiles
   file:
