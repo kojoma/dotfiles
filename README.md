@@ -1,6 +1,6 @@
 # Provisioning Mac By Ansible
 
-[![CircleCI](https://circleci.com/gh/kojoma/my-settings.svg?style=svg)](https://circleci.com/gh/kojoma/my-settings)
+https://github.com/kojoma/my-settings/workflows/ansible-lint/badge.svg
 
 ## 手動での準備
 
