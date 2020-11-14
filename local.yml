@@ -6,7 +6,6 @@
   roles:
     - homebrew
     - homebrew-cask
-    - mas
     - setup-git
     - setup-ssh
     - setup-vim
@@ -20,5 +19,3 @@
     # inkdrop-plugins role
     # yamllint disable-line rule:line-length
     - inkdrop_packages_dir: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages"
-    # mas role
-    - install_mas: "no"
