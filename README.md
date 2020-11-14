@@ -27,9 +27,6 @@ brew install ansible
 ```
 $ cd my-settings
 $ bin/setup.sh
-
-# Mas でアプリケーションもインストールする場合
-$ bin/setup-with-mas.sh
 ```
 
 ## 手動での設定が必要なこと
