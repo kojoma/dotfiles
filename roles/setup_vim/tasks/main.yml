@@ -15,12 +15,14 @@
     src: .vimrc
     dest: "{{ home_dir }}/.vimrc"
     force: true
+    mode: '0644'
 
 - name: Copy vim theme file
   copy:
     src: molokai.vim
     dest: "{{ home_dir }}/.vim/colors/molokai.vim"
     force: true
+    mode: '0644'
 
 - name: Make vim plugin directory
   file:
