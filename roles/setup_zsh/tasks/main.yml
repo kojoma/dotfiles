@@ -24,3 +24,4 @@
     src: "{{ home_dir }}/Documents/Dotfiles/zshconfig"
     dest: "{{ home_dir }}/.zshconfig"
     state: link
+    mode: '0755'

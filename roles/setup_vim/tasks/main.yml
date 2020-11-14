@@ -4,11 +4,13 @@
   file:
     path: "{{ home_dir }}/.vim"
     state: directory
+    mode: '0755'
 
 - name: Make .vim colors directory
   file:
     path: "{{ home_dir }}/.vim/colors"
     state: directory
+    mode: '0755'
 
 - name: Copy .vimrc
   copy:
@@ -28,6 +30,7 @@
   file:
     path: "{{ home_dir }}/.vim/autoload"
     state: directory
+    mode: '0755'
 
 - name: Download vim-plug file
   get_url:
