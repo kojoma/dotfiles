@@ -1,7 +1,7 @@
 ---
 
 - name: Check is ipm installed
-  shell: ipm --version
+  command: ipm --version
   register: ipm_version
   changed_when: false
   failed_when: false
@@ -14,7 +14,7 @@
   when: ipm_version.rc == 0
 
 - name: Install vibrant-dark-ui if needed
-  shell: ipm install vibrant-dark-ui
+  command: ipm install vibrant-dark-ui
   when: result_vibrant_dark_ui.matched == 0
 
 - name: Find for plugin markdown-emoji
@@ -25,7 +25,7 @@
   when: ipm_version.rc == 0
 
 - name: Install markdown-emoji if needed
-  shell: ipm install markdown-emoji
+  command: ipm install markdown-emoji
   when: result_markdown_emoji.matched == 0
 
 - name: Find for plugin spell-checker
@@ -36,7 +36,7 @@
   when: ipm_version.rc == 0
 
 - name: Install spell-checker if needed
-  shell: ipm install spell-checker
+  command: ipm install spell-checker
   when: result_spell_checker.matched == 0
 
 - name: Find for plugin hide-menu-bar
@@ -47,7 +47,7 @@
   when: ipm_version.rc == 0
 
 - name: Install hide-menu-bar if needed
-  shell: ipm install hide-menu-bar
+  command: ipm install hide-menu-bar
   when: result_hide_menu_bar.matched == 0
 
 - name: Find for plugin breaks
@@ -58,7 +58,7 @@
   when: ipm_version.rc == 0
 
 - name: Install breaks if needed
-  shell: ipm install breaks
+  command: ipm install breaks
   when: result_breaks.matched == 0
 
 - name: Find for plugin colorfi-for-japanese-preview
@@ -69,7 +69,7 @@
   when: ipm_version.rc == 0
 
 - name: Install colorfi-for-japanese-preview if needed
-  shell: ipm install colorfi-for-japanese-preview
+  command: ipm install colorfi-for-japanese-preview
   when: result_colorfi_for_japanese_preview.matched == 0
 
 - name: Find for plugin material-dark-mod-syntax
@@ -80,7 +80,7 @@
   when: ipm_version.rc == 0
 
 - name: Install material-dark-mod-syntax if needed
-  shell: ipm install material-dark-mod-syntax
+  command: ipm install material-dark-mod-syntax
   when: result_material_dark_mod_syntax.matched == 0
 
 - name: Find for plugin table-editor
@@ -91,7 +91,7 @@
   when: ipm_version.rc == 0
 
 - name: Install table-editor if needed
-  shell: ipm install table-editor
+  command: ipm install table-editor
   when: result_table_editor.matched == 0
 
 - name: Find for plugin toc
@@ -102,5 +102,5 @@
   when: ipm_version.rc == 0
 
 - name: Install toc if needed
-  shell: ipm install toc
+  command: ipm install toc
   when: result_toc.matched == 0

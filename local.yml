@@ -5,13 +5,13 @@
   become: false
   roles:
     - homebrew
-    - homebrew-cask
-    - setup-git
-    - setup-ssh
-    - setup-vim
-    - setup-zsh
-    - setup-peco
-    - inkdrop-plugins
+    - homebrew_cask
+    - setup_git
+    - setup_ssh
+    - setup_vim
+    - setup_zsh
+    - setup_peco
+    - inkdrop_plugins
     - macos
   vars:
     # execution user vars

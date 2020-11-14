@@ -1,2 +1,0 @@
-ansible-lint==3.5.1
-yamllint

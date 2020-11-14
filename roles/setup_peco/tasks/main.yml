@@ -4,6 +4,7 @@
   file:
     path: "{{ home_dir }}/.config"
     state: directory
+    mode: '0755'
 
 # Dotfiles are synced in iCloud
 - name: Create symbolic link to peco
