@@ -9,6 +9,11 @@
     name: devhubapp/devhub
     state: present
 
+- name: Tap homebrew/cask-fonts
+  homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+
 - name: Install Homebrew Cask packages
   homebrew_cask:
     name: "{{ item }}"
