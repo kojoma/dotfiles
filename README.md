@@ -1,6 +1,6 @@
 # Provisioning Mac By Ansible
 
-![Ansible lint](https://github.com/kojoma/my-settings/workflows/.github/workflows/ansible-lint.yml/badge.svg)
+![Ansible lint](https://github.com/kojoma/my-settings/workflows/Ansible%20lint/badge.svg)
 
 ## 手動での準備
 
