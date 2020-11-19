@@ -12,7 +12,6 @@
     name:
       - awscli
       - bluetoothconnector
-      - carthage
       - firebase-cli
       - ghq
       - git-flow-avh
@@ -21,8 +20,6 @@
       - hugo
       - jq
       - peco
-      - rbenv
-      - stern
       - tig
       - tree
       - vim

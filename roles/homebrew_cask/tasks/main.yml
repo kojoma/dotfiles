@@ -21,7 +21,6 @@
   with_items:
     - 1password
     - alfred
-    - appcleaner
     - dash
     - devhub
     - docker
@@ -31,7 +30,6 @@
     - intellij-idea
     - iterm2
     - kindle
-    - sequel-pro
     - sf-symbols
     - skitch
     - slack
