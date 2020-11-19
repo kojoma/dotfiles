@@ -13,10 +13,11 @@
       - awscli
       - bluetoothconnector
       - firebase-cli
+      - gh
       - ghq
       - git-flow-avh
+      - git-secrets
       - heroku
-      - gh
       - hugo
       - jq
       - peco
