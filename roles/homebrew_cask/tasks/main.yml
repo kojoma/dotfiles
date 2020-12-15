@@ -4,11 +4,6 @@
     name: cask
     state: present
 
-- name: Tap DevHub repository
-  homebrew_tap:
-    name: devhubapp/devhub
-    state: present
-
 - name: Tap homebrew/cask-fonts
   homebrew_tap:
     name: homebrew/cask-fonts
@@ -22,7 +17,6 @@
     - 1password
     - alfred
     - dash
-    - devhub
     - docker
     - font-cica
     - google-chrome
