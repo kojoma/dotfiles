@@ -13,7 +13,6 @@
   community.general.homebrew:
     name:
       - awscli
-      - bluetoothconnector
       - firebase-cli
       - gh
       - ghq
