@@ -1,6 +1,8 @@
 ---
-- name: Update Homebrew
-  homebrew: update_homebrew=yes
+- name: Update and Upgrade Homebrew
+  community.general.homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
 
 - name: Tap heroku repository
   homebrew_tap:
@@ -8,7 +10,7 @@
     state: present
 
 - name: Install Homebrew packages
-  homebrew:
+  community.general.homebrew:
     name:
       - awscli
       - bluetoothconnector
