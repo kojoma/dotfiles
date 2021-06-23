@@ -21,6 +21,7 @@
       - heroku
       - hugo
       - jq
+      - jwbargsten/misc/defbro
       - peco
       - tig
       - tree
