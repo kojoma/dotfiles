@@ -11,11 +11,7 @@
     - setup_vim
     - setup_zsh
     - setup_peco
-    - inkdrop_plugins
     - macos
   vars:
     # execution user vars
     - home_dir: "{{ lookup('env', 'HOME') }}"
-    # inkdrop-plugins role
-    # yamllint disable-line rule:line-length
-    - inkdrop_packages_dir: "{{ home_dir }}/Library/Application\ Support/inkdrop/packages"

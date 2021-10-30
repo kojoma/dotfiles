@@ -4,24 +4,14 @@
     update_homebrew: yes
     upgrade_all: yes
 
-- name: Tap heroku repository
-  homebrew_tap:
-    name: heroku/brew
-    state: present
-
 - name: Install Homebrew packages
   community.general.homebrew:
     name:
       - awscli
-      - firebase-cli
-      - gh
       - ghq
       - git-flow-avh
-      - git-secrets
-      - heroku
       - hugo
       - jq
-      - jwbargsten/misc/defbro
       - peco
       - tig
       - tree
