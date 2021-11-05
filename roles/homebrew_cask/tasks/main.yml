@@ -16,6 +16,7 @@
   with_items:
     - 1password
     - alfred
+    - choosy
     - dash
     - docker
     - font-cica
