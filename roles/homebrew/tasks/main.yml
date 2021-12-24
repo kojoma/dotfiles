@@ -13,6 +13,7 @@
       - hugo
       - jq
       - peco
+      - php
       - tig
       - tree
       - vim
