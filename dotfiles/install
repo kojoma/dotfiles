@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+if [ "$(uname)" != "Darwin" ] ; then
+  echo "Not macOS!"
+  exit 1
+fi
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+
+# Install packages with Homebrew
+brew bundle
