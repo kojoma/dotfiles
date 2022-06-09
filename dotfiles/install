@@ -6,7 +6,7 @@ if [ "$(uname)" != "Darwin" ] ; then
 fi
 
 # Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install packages with Homebrew
 brew bundle
