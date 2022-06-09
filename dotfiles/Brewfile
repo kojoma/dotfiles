@@ -10,7 +10,9 @@ brew "cask"
 brew "ghq"
 brew "hugo"
 brew "jq"
+brew "mas"
 brew "peco"
+brew "php"
 brew "tig"
 brew "tree"
 brew "vim"
@@ -33,3 +35,9 @@ cask "sf-symbols"
 cask "skitch"
 cask "slack"
 cask "visual-studio-code"
+mas "Dato", id: 1470584107
+mas "Day One", id: 1055511498
+mas "feedly", id: 865500966
+mas "Keepa - Price Tracker", id: 1533805339
+mas "Magnet", id: 441258766
+mas "Things", id: 904280696
