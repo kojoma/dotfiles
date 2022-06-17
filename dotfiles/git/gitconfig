@@ -1,0 +1,10 @@
+[user]
+  name = kojoma
+  email = masaru.kojo@gmail.com
+[core]
+  editor = vim -c \"set fenc=utf-8\"
+  excludesfile = /Users/kojoma/.gitignore
+[ghq]
+  root = ~/Works
+[fetch]
+  prune = true
