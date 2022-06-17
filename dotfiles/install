@@ -16,3 +16,6 @@ brew bundle
 # Setup Git
 ln -fnsv "${SCRIPT_DIR}/git/gitconfig" "$HOME/.gitconfig"
 ln -fnsv "${SCRIPT_DIR}/git/gitignore" "$HOME/.gitignore"
+
+# Setup Vim
+ln -fnsv "${SCRIPT_DIR}/vim/vimrc" "$HOME/.vimrc"

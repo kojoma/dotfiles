@@ -1,0 +1,37 @@
+"
+" 文字入力について
+"
+" ファイル内の Tab が対応する空白の数
+set tabstop=2
+" Tab の代わりに空白文字を挿入する
+set expandtab
+" 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
+set smarttab
+" 新しい行のインデントを現在の行と同じにする
+set autoindent
+" 高度な自動インデントを行う
+set smartindent
+" カーソルを行頭、行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+
+"
+" エディターの表示について
+"
+" 行番号を表示する
+set number
+" 対応するカッコを表示する
+set showmatch
+" Show tab, space, CRLF
+set list
+set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+" Color
+set t_Co=256
+colorscheme molokai
+
+"
+" 検索について
+"
+set incsearch
+set nowrapscan
+set smartcase
+
