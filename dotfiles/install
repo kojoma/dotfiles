@@ -47,5 +47,8 @@ defaults write com.apple.finder AppleShowAllExtensions -bool true
 #
 # Setup Zsh and https://github.com/sorin-ionescu/prezto
 #
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+PREZTO_INSTALL_DEST="${ZDOTDIR:-$HOME}/.zprezto"
+if [ ! -d "${PREZTO_INSTALL_DEST}" ];then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${PREZTO_INSTALL_DEST}"
+fi
 ln -fnsv "${SCRIPT_DIR}/zsh/zshconfig" "$HOME/.zshconfig"
