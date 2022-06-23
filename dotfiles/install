@@ -19,3 +19,7 @@ ln -fnsv "${SCRIPT_DIR}/git/gitignore" "$HOME/.gitignore"
 
 # Setup Vim
 ln -fnsv "${SCRIPT_DIR}/vim/vimrc" "$HOME/.vimrc"
+
+# Setup peco
+mkdir -p "$HOME/.config/peco"
+ln -fnsv "${SCRIPT_DIR}/peco/config.json" "$HOME/.config/peco/config.json"
