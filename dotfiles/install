@@ -55,5 +55,6 @@ if [ ! -d "${PREZTO_INSTALL_DEST}" ];then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${PREZTO_INSTALL_DEST}"
 fi
 ln -fnsv "${SCRIPT_DIR}/zsh/zshconfig" "$HOME/.zshconfig"
+ln -fnsv "${SCRIPT_DIR}/zsh/zshrc" "$HOME/.zshrc"
 
 echo -e "\nInstall Finished!\n"
