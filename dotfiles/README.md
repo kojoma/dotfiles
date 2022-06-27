@@ -1,13 +1,10 @@
 # Provisioning Mac
 
-![Ansible lint](https://github.com/kojoma/my-settings/workflows/Ansible%20lint/badge.svg)
-
 ## Prepare install
 
 ```
 $ cd ~/
-$ mkdir Works
-$ cd Works
+$ mkdir -p Works/github.com/kojoma && "$_"
 
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
