@@ -22,6 +22,8 @@ brew bundle
 #
 ln -fnsv "${SCRIPT_DIR}/git/gitconfig" "$HOME/.gitconfig"
 ln -fnsv "${SCRIPT_DIR}/git/gitignore" "$HOME/.gitignore"
+mkdir -p "$HOME/.vim/colors"
+git clone https://github.com/tomasr/molokai.git
 
 #
 # Setup Vim
