@@ -61,3 +61,8 @@ fi
   - 詳細は公式のREADMEを参照
 - key-bindingsを `vi` に変更
 - [Customizing Your Prezto Prompt - Mike Buss](https://mikebuss.com/2014/04/07/customizing-prezto/)を参考にthemeを好きなものに変更する
+
+### GitHub の認証情報をキャッシュする
+
+https://docs.github.com/ja/get-started/getting-started-with-git/caching-your-github-credentials-in-git の手順を Terminal で実行する。
+
