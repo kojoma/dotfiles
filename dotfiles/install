@@ -24,7 +24,9 @@ ln -fnsv "${SCRIPT_DIR}/git/gitconfig" "$HOME/.gitconfig"
 ln -fnsv "${SCRIPT_DIR}/git/gitignore" "$HOME/.gitignore"
 VIM_COLORS_DIR="$HOME/.vim/colors"
 mkdir -p "${VIM_COLORS_DIR}"
-git clone https://github.com/tomasr/molokai.git "${VIM_COLORS_DIR}/"
+if [ ! -d "${VIM_COLORS_DIR}" ];then
+  git clone https://github.com/tomasr/molokai.git "${VIM_COLORS_DIR}/"
+fi
 
 #
 # Setup Vim
