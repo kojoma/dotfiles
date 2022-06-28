@@ -36,6 +36,7 @@ cask "sf-symbols"
 cask "skitch"
 cask "slack"
 cask "visual-studio-code"
+cask "zoom"
 mas "Dato", id: 1470584107
 mas "Day One", id: 1055511498
 mas "feedly", id: 865500966
