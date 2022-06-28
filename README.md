@@ -4,7 +4,7 @@
 
 ```
 $ cd ~/
-$ mkdir -p Works/github.com/kojoma && "$_"
+$ mkdir -p Works/github.com/kojoma && cd "$_"
 
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
