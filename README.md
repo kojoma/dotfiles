@@ -30,6 +30,12 @@ $ chsh
 
 ### preztoの設定
 
+#### コマンドの実行
+
+https://github.com/sorin-ionescu/prezto#manual にある手順を行う。
+
+#### .zpreztorc の更新
+
 `~/.zpreztorc` を開き、下記を変更する
 
 - pmoduleに下記を追加
