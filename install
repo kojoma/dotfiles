@@ -41,6 +41,7 @@ ln -fnsv "${SCRIPT_DIR}/peco/config.json" "$HOME/.config/peco/config.json"
 
 #
 # Setup macOS Defaults
+# See: https://macos-defaults.com/
 #
 # Disabled Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
