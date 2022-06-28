@@ -1,32 +1,22 @@
-# Provisioning Mac By Ansible
+# dotfiles
 
-![Ansible lint](https://github.com/kojoma/my-settings/workflows/Ansible%20lint/badge.svg)
-
-## 手動での準備
-
-Ansibleを実行するための準備。必要であれば行う。
+## Prepare install
 
 ```
 $ cd ~/
-$ mkdir Works
-$ cd Works
+$ mkdir -p Works/github.com/kojoma && "$_"
 
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
 
 $ git clone https://github.com/kojoma/my-settings.git
-
-# See https://brew.sh/ and install Homebrew
-
-# Install Ansible
-brew install ansible
 ```
 
-## Ansible Playbookの実行
+## How to install
 
 ```
 $ cd my-settings
-$ bin/setup.sh
+$ ./install
 ```
 
 ## 手動での設定が必要なこと
@@ -36,19 +26,6 @@ $ bin/setup.sh
 ```
 # /bin/zshに変更する
 $ chsh
-```
-
-### .zshrc に config files を読み込む設定を追記
-
-```
-# Customize to your needs...
-ZSHHOME="${HOME}/.zshconfig"
-
-if [ -d $ZSHHOME -a -r $ZSHHOME -a -x $ZSHHOME ]; then
-  for file in $ZSHHOME/*; do
-    [[ ${file##*/} = *.zsh ]] && [ \( -f $file -o -h $file \) -a -r $file ] && source $file
-  done
-fi
 ```
 
 ### preztoの設定
@@ -69,6 +46,7 @@ fi
 - key-bindingsを `vi` に変更
 - [Customizing Your Prezto Prompt - Mike Buss](https://mikebuss.com/2014/04/07/customizing-prezto/)を参考にthemeを好きなものに変更する
 
-### Ruby Gems
+### GitHub の認証情報をキャッシュする
 
-[Ansible gem module](https://docs.ansible.com/ansible/2.5/modules/gem_module.html)を利用して、インストールできそうだったがインストールしたはずのgemコマンドが利用できない問題があったためひとまず未対応。詳細は[このPull Request](https://github.com/kojoma/my-settings/pull/14)に記述している。
+https://docs.github.com/ja/get-started/getting-started-with-git/caching-your-github-credentials-in-git の手順を Terminal で実行する。
+
