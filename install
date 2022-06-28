@@ -43,12 +43,8 @@ ln -fnsv "${SCRIPT_DIR}/peco/config.json" "$HOME/.config/peco/config.json"
 # Setup macOS Defaults
 # See: https://macos-defaults.com/
 #
-# Disabled Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-# Show all files
-defaults write com.apple.finder AppleShowAllFiles -bool true
-# Show all extensions
-defaults write com.apple.finder AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+defaults write com.apple.Finder "AppleShowAllFiles" -bool "true"
 
 #
 # Setup Zsh and https://github.com/sorin-ionescu/prezto
