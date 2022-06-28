@@ -9,13 +9,13 @@ $ mkdir -p Works/github.com/kojoma && "$_"
 # gitコマンドを実行するためにはコマンドラインツールをインストールする必要がある
 $ xcode-select --install
 
-$ git clone https://github.com/kojoma/my-settings.git
+$ git clone https://github.com/kojoma/dotfiles.git
 ```
 
 ## How to install
 
 ```
-$ cd my-settings
+$ cd dotfiles
 $ ./install
 ```
 
