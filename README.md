@@ -15,7 +15,7 @@ $ git clone https://github.com/kojoma/my-settings.git
 ## How to install
 
 ```
-$ cd my-settings/dotfiles
+$ cd my-settings
 $ ./install
 ```
 
