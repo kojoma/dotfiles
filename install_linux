@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+#
+# Setup Git
+#
+ln -fnsv "${SCRIPT_DIR}/git/gitconfig" "$HOME/.gitconfig"
+ln -fnsv "${SCRIPT_DIR}/git/gitignore" "$HOME/.gitignore"
+VIM_COLORS_DIR="$HOME/.vim/colors"
+mkdir -p "${VIM_COLORS_DIR}"
+if [ ! -d "${VIM_COLORS_DIR}" ];then
+  git clone https://github.com/tomasr/molokai.git "${VIM_COLORS_DIR}/"
+fi
+
+#
+# Setup Vim
+#
+ln -fnsv "${SCRIPT_DIR}/vim/vimrc" "$HOME/.vimrc"
+
+#
+# Setup Zsh and https://github.com/sorin-ionescu/prezto
+#
+PREZTO_INSTALL_DEST="${ZDOTDIR:-$HOME}/.zprezto"
+if [ ! -d "${PREZTO_INSTALL_DEST}" ];then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${PREZTO_INSTALL_DEST}"
+fi
+ln -fnsv "${SCRIPT_DIR}/zsh/zshconfig" "$HOME/.zshconfig"
+ln -fnsv "${SCRIPT_DIR}/zsh/zshrc" "$HOME/.zshrc"
+
+echo -e "\nInstall Finished!\n"
