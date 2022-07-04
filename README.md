@@ -16,7 +16,7 @@ $ git clone https://github.com/kojoma/dotfiles.git
 
 ```
 $ cd dotfiles
-$ ./install
+$ ./install <Brewfile_name>
 ```
 
 ## 手動での設定が必要なこと
