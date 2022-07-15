@@ -3,6 +3,12 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 #
+# Install packages
+#
+sudo apt-get update
+sudo apt-get install zsh curl wget vim tig -y
+
+#
 # Setup Git
 #
 ln -fnsv "${SCRIPT_DIR}/git/gitconfig" "$HOME/.gitconfig"
