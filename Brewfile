@@ -22,8 +22,6 @@ cask "dash"
 cask "font-cica"
 cask "iterm2"
 cask "kindle"
-cask "logitech-options"
-cask "logitech-unifying"
 cask "visual-studio-code"
 cask "zoom"
 mas "Day One", id: 1055511498
