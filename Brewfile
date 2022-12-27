@@ -24,7 +24,6 @@ cask "font-cica"
 cask "iterm2"
 cask "kindle"
 cask "visual-studio-code"
-cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Day One", id: 1055511498
 mas "feedly", id: 865500966
