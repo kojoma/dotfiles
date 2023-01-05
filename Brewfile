@@ -26,7 +26,6 @@ cask "kindle"
 cask "visual-studio-code"
 mas "1Password for Safari", id: 1569813296
 mas "Day One", id: 1055511498
-mas "feedly", id: 865500966
 mas "iMovie", id: 408981434
 mas "Keepa - Price Tracker", id: 1533805339
 mas "Magnet", id: 441258766
