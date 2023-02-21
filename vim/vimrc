@@ -13,6 +13,8 @@ set autoindent
 set smartindent
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" delete キーを有効にする
+set backspace=indent,eol,start
 
 "
 " エディターの表示について
