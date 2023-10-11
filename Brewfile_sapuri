@@ -24,13 +24,10 @@ cask "docker"
 cask "font-cica"
 cask "google-chrome"
 cask "iterm2"
-cask "jasper"
 cask "kindle"
 cask "microsoft-teams"
 cask "skitch"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
-mas "Dato", id: 1470584107
 mas "Magnet", id: 441258766
-mas "Things", id: 904280696
