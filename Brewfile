@@ -22,7 +22,6 @@ cask "alfred"
 cask "cleanmymac"
 cask "font-cica"
 cask "iterm2"
-cask "kindle"
 mas "1Password for Safari", id: 1569813296
 mas "Day One", id: 1055511498
 mas "iMovie", id: 408981434
