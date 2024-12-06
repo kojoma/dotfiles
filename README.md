@@ -19,6 +19,14 @@ $ cd dotfiles
 $ ./install <Brewfile_name>
 ```
 
+## How to update Brewfile
+
+ファイルは git で管理しているため --force で強制的に上書きしても問題ない。
+
+```
+$ brew bundle dump --force <Brewfile_name>
+```
+
 ## 手動での設定が必要なこと
 
 ### shellの切り替え
