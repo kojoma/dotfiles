@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "jwbargsten/misc"
 brew "unbound"
 brew "gnutls"
