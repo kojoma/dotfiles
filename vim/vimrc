@@ -36,4 +36,11 @@ let g:molokai_original = 1
 set incsearch
 set nowrapscan
 set smartcase
+" 検索結果をハイライト表示する
+set hlsearch
+
+" 検索時に画面下部からファイル末尾まで行ったら先頭に戻って検索を続ける
+set wrapscan
+" 検索文字列を入力中にリアルタイムでハイライト・移動する
+set incsearch
 
